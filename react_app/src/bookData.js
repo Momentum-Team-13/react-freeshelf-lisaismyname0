@@ -89,6 +89,7 @@ export const BOOKS = [
 export default function InfoCard(){
   const [expanded, setExpanded] = useState(false)
   const [minimized, setMinimized] = useState(false)
+
   return(
     BOOKS.map((book)=> (
     <div id ="book" key = {book.title}> 
@@ -96,9 +97,9 @@ export default function InfoCard(){
       <p>by: {book.author}</p>
       <p>{book.shortDescription}</p>
       <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
-      <button onClick={()=> setExpanded(!expanded)} href= "">
-      {expanded ? 'Show Less' : 'Show More'}</button>
-      <button onClick ={()=> setMinimized(!minimized)} href=''>{minimized ? 'Show More' : 'Show Less'}</button>
-      <div>{minimized ? 'book.LongDescription' : null }</div>
+      <button onClick ={()=> setMinimized(!minimized)} href=''>{minimized ? 'Show Less' : 'Show More'}</button>
+      <div>{minimized ? `${book.detailedDescription}` : null }</div>
     </div>))
     )}
+
+    // how do i make only the div i want to show up after clicking read more button as opposed to making all buttons show
