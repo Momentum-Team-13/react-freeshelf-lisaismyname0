@@ -84,28 +84,24 @@ export const bookData = [
 ]
 export default InfoButton
 
+export function BookInfo (props){
+  for (let book of bookData){
+    return(
+      <div>
+      <h1>from line 91 {book.title}</h1>
+      </div>
+    )}}
+
 function InfoButton(props){
   // console.log("these are props" + props)
   for (let book of bookData){
     console.log(book)
+    let title = book.title
+
   return (
     <div>
-    {/* <h3>{title}</h3> */}
+    <h3>This is the {title}</h3>
     <button onClick = {() => console.log("Hello")}>Button</button>
     </div>
   )
-}}
-
-export function BookInfo (props){
-  for (let book of bookData){
-    let bookDiv = document.createElement("div")
-    let bookContainer= document.getElementById('books')
-    bookDiv.innerText = book.title
-    console.log("inner text is"
-     + bookDiv.innerText)
-  bookDiv.appendChild(bookContainer)}
-  return(
-  <div>
-    "did this work?""
-  </div>)
-}
+  }}
