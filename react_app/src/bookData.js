@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 
 export const BOOKS = [
   {
@@ -86,10 +87,25 @@ export const BOOKS = [
 // console.log (BOOKS)
 
 export default function InfoCard(){
+  const [expanded, setExpanded] = useState(false)
   return(
     BOOKS.map((book)=> (
-    <div key = {book.title}> 
-      <div>{book.title}</div>
-      <div>{book.author}</div>
+    <div id ="book" key = {book.title}> 
+      <p className ="title">{book.title}</p>
+      <p>by: {book.author}</p>
+      <p>{book.shortDescription}</p>
+      <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
+      <button onClick={()=> setExpanded(!expanded)} href= "">
+      {expanded ? 'Show Less' : 'Show More'}</button>
     </div>))
     )}
+
+export function ShowMore(){
+  const [expanded, setExpanded] = useState(true)
+  return (
+    console.log("hello"),
+    BOOKS.map((book) => (
+      <div> {expanded ? "Hello": "Goodbye"}
+      </div>
+    )))
+  }
