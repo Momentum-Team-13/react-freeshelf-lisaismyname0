@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const bookData = [
+export const BOOKS = [
   {
     "title": "You Don't Know JS Yet: Getting Started",
     "author": "Kyle Simpson",
@@ -82,26 +82,14 @@ export const bookData = [
     "detailedDescription": "Structure and Interpretation of Computer Programs has had a dramatic impact on computer science curricula over the past decade. This long-awaited revision contains changes throughout the text. There are new implementations of most of the major programming systems in the book, including the interpreters and compilers, and the authors have incorporated many small changes that reflect their experience teaching the course at MIT since the first edition was published. A new theme has been introduced that emphasizes the central role played by different approaches to dealing with time in computational models: objects with state, concurrent programming, functional programming and lazy evaluation, and nondeterministic programming. There are new example sections on higher-order procedures in graphics and on applications of stream processing in numerical programming, and many new exercises. In addition, all the programs have been reworked to run in any Scheme implementation that adheres to the IEEE standard."
   }
 ]
-export default InfoButton
 
-export function BookInfo (props){
-  for (let book of bookData){
-    return(
-      <div>
-      <h1>from line 91 {book.title}</h1>
-      </div>
-    )}}
+// console.log (BOOKS)
 
-function InfoButton(props){
-  // console.log("these are props" + props)
-  for (let book of bookData){
-    console.log(book)
-    let title = book.title
-
-  return (
-    <div>
-    <h3>This is the {title}</h3>
-    <button onClick = {() => console.log("Hello")}>Button</button>
-    </div>
-  )
-  }}
+export default function InfoCard(){
+  return(
+    BOOKS.map((book)=> (
+    <div key = {book.title}> 
+      <div>{book.title}</div>
+      <div>{book.author}</div>
+    </div>))
+    )}
