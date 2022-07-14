@@ -88,6 +88,7 @@ export const BOOKS = [
 
 export default function InfoCard(){
   const [expanded, setExpanded] = useState(false)
+  const [minimized, setMinimized] = useState(false)
   return(
     BOOKS.map((book)=> (
     <div id ="book" key = {book.title}> 
@@ -97,15 +98,7 @@ export default function InfoCard(){
       <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
       <button onClick={()=> setExpanded(!expanded)} href= "">
       {expanded ? 'Show Less' : 'Show More'}</button>
+      <button onClick ={()=> setMinimized(!minimized)} href=''>{minimized ? 'Show More' : 'Show Less'}</button>
+      <div>{minimized ? 'book.LongDescription' : null }</div>
     </div>))
     )}
-
-export function ShowMore(){
-  const [expanded, setExpanded] = useState(true)
-  return (
-    console.log("hello"),
-    BOOKS.map((book) => (
-      <div> {expanded ? "Hello": "Goodbye"}
-      </div>
-    )))
-  }
