@@ -102,6 +102,7 @@ export default function InfoCard(){
       <div>{minimized ? `${book.detailedDescription}` : null }</div>
       </div>
       <div>{minimized ? `Published ${book.publicationDate} by ${book.publisher}` : null }</div>
+      <div>{minimized ? `${book.url}`: null }</div>
     </div>))
     )}
 
