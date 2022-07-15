@@ -1,4 +1,3 @@
 TO-DO:
 - styling
--figure out why text won't stay contained in box (specifically the url)
 - what to do if publisher is null

@@ -1,10 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 
-
-
-// console.log (BOOKS)
-
 export default function InfoCard({book, index}){
   const [minimized, setMinimized] = useState(false)
 
@@ -16,16 +12,15 @@ export default function InfoCard({book, index}){
       <div>{book.shortDescription}</div>
       <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
       <div class ="expanded">
-      <button onClick ={()=> setMinimized(!minimized)} href=''>{minimized ? 'Show Less' : 'Show More'}</button>
-      <div>{minimized ? `${book.detailedDescription}` : null }</div>
+      { minimized ? (
+      <button type="button" aria-expanded="true" onClick={() => setMinimized(!minimized)}>Show Less</button>  
+        ) : (
+          <button type="button" aria-expanded="false" onClick={() => setMinimized(!minimized)}>Show More</button>)}
       </div>
-      <div>{minimized ? `Published ${book.publicationDate} by ${book.publisher}` : null }</div>
-      <div>{minimized ? `${book.url}`: null }</div>
 
-    {minimized ? (
-    <DetailCard book={book} key = {index}/>): ("")
+      {minimized ? (
+      <DetailCard book={book} key = {index}/>): ("")
     }
-
     </div>
     )
   }
@@ -33,10 +28,10 @@ export default function InfoCard({book, index}){
 function DetailCard ({book}){
   return (
     <div>
+    <br></br>
       <div>{book.detailedDescription}</div>
-      <div>{book.publicationDate} by {book.publisher}</div>
-      <div>{book.url}</div>
-      
+      <div>Published {book.publicationDate} by {book.publisher}</div>
+      <a href='{book.url}'>{book.url}</a>
     </div>
   )
 }
