@@ -97,8 +97,11 @@ export default function InfoCard(){
       <p>by: {book.author}</p>
       <p>{book.shortDescription}</p>
       <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
+      <div class ="expanded">
       <button onClick ={()=> setMinimized(!minimized)} href=''>{minimized ? 'Show Less' : 'Show More'}</button>
       <div>{minimized ? `${book.detailedDescription}` : null }</div>
+      </div>
+      <div>{minimized ? `Published ${book.publicationDate} by ${book.publisher}` : null }</div>
     </div>))
     )}
 
