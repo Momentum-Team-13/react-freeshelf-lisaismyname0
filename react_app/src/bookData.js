@@ -93,9 +93,9 @@ export default function InfoCard(){
   return(
     BOOKS.map((book)=> (
     <div id ="book" key = {book.title}> 
-      <p className ="title">{book.title}</p>
-      <p>by: {book.author}</p>
-      <p>{book.shortDescription}</p>
+      <div className ="title">{book.title}</div>
+      <div>by: {book.author}</div>
+      <div>{book.shortDescription}</div>
       <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
       <div class ="expanded">
       <button onClick ={()=> setMinimized(!minimized)} href=''>{minimized ? 'Show Less' : 'Show More'}</button>

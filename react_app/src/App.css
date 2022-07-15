@@ -1,12 +1,25 @@
 #container{
+  padding: 5 px;
+  margin: 5 px;
   display:flex;
   flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
 }
 
 #book{
-  border: 2px solid black;
+  align-items: center;
+  border: 1px solid black;
   display:flex;
   display: inline-block;
+  flex-direction: row;
+  width: 300px;
+  height: auto;
+  align-content: top;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .title{
