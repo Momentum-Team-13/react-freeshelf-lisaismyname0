@@ -87,7 +87,7 @@ function App() {
 
   return (
     <div>
-      <div id= "header"> <h1>Book List</h1></div>
+      <div id= "header"> <h1>React Freeshelf Book List</h1></div>
       <div id = "container">
       {BOOKS.map((book, index) => (
         <InfoCard book = {book} key = {index}/>

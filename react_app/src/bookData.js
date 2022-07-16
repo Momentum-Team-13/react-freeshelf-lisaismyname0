@@ -57,7 +57,9 @@ function DetailCard ({book}){
     <div className= "detail">
     <br></br>
       <div>{book.detailedDescription}</div>
-      <div>Published {book.publicationDate} by {book.publisher}</div>
+      <div>Published {book.publicationDate}</div>
+      
+      <div>by {book.publisher}</div>
       <div id ="url">
       <a href={book.url}>{book.url}</a>
       </div>
