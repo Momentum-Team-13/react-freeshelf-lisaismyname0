@@ -1,7 +1,7 @@
 #container{
   padding: 5 px;
   margin: 5 px;
-  display:flex;
+  display: flex;
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -10,16 +10,22 @@
 }
 
 #book{
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
-  display:flex;
-  display: inline-block;
-  flex-direction: row;
-  width: 300px;
   height: auto;
+  width: 400 px;
   align-content: top;
   flex-wrap: wrap;
   margin-bottom: 10px;
+}
+
+.card_top{
+  display:flex;
+  flex-direction: row;
+}
+.text_info{
+  width: 200px;
 }
 
 .title{
@@ -28,10 +34,19 @@
 }
 
 img{
-  width: 250px;
+  width: 200px;
   height: auto;
 }
 
 .expanded{
   font-style:italic;
+}
+
+#url{
+  width: min-content;
+  font-style:normal;
+}
+
+.detail{
+  width: 390px;
 }

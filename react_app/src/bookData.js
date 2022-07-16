@@ -6,13 +6,14 @@ export default function InfoCard({book, index}){
   const [minimized, setMinimized] = useState(false)
 
   return(
-    // BOOKS.map((book)=> (
+
     <div id ="book" key = {book.title}> 
-      <div className ="title">{book.title}</div>
-      <div>by: {book.author}</div>
-      <div>{book.shortDescription}</div>
-      <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
-      <div>
+    <div className="card_top">
+      <div className = "text_info">
+        <div className ="title">{book.title}</div>
+        <div>by: {book.author}</div>
+        <div>{book.shortDescription}</div>
+      </div>
       { minimized ? (
       <div className ="disclosure-control"
       role ="button"
@@ -23,6 +24,11 @@ export default function InfoCard({book, index}){
       </div> 
         ) : ("")
           }
+      <div className = "photo">
+      <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
+      </div>
+      <div>
+      </div>
       </div>
 
       {minimized ? (
@@ -45,11 +51,13 @@ export default function InfoCard({book, index}){
 
 function DetailCard ({book}){
   return (
-    <div className= "expanded">
+    <div className= "detail">
     <br></br>
       <div>{book.detailedDescription}</div>
       <div>Published {book.publicationDate} by {book.publisher}</div>
-      <a href='{book.url}'>{book.url}</a>
+      <div id ="url">
+      <a href={book.url}>{book.url}</a>
+      </div>
     </div>
   )
 }

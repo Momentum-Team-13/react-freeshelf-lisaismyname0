@@ -1,3 +1,5 @@
 TO-DO:
 - styling
 - what to do if publisher is null
+^ include ternary operators
+- figure out how to restyle bookDiv after clicking "read more"
