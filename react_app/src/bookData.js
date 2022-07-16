@@ -8,12 +8,12 @@ export default function InfoCard({book, index}){
   return(
 
     <div id ="book" key = {book.title}> 
+    <span id = "head" className ="title">{book.title}</span>
+    <span id = "head">by: {book.author}</span>
+    <br></br>
     <div className="card_top">
       <div className = "text_info">
-        <div className ="title">{book.title}</div>
-        <div>by: {book.author}</div>
         <div>{book.shortDescription}</div>
-      </div>
       { minimized ? (
       <div className ="disclosure-control"
       role ="button"
@@ -24,9 +24,12 @@ export default function InfoCard({book, index}){
       </div> 
         ) : ("")
           }
+      </div>
+    <div>
       <div className = "photo">
       <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
       </div>
+    </div>
       <div>
       </div>
       </div>
@@ -36,7 +39,7 @@ export default function InfoCard({book, index}){
       <DetailCard book={book} key = {index}/>
       </>)
       : (
-        <div className="disclosure-control"
+        <div className="text_info"
         role ="button"
         aria-expanded={minimized}
         onClick={()=> setMinimized(!minimized)}>
