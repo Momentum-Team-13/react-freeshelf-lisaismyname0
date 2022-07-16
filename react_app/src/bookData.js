@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { TriangleDownIcon, TriangleRightIcon } from '@primer/octicons-react'
 
 export default function InfoCard({book, index}){
   const [minimized, setMinimized] = useState(false)
@@ -11,15 +12,32 @@ export default function InfoCard({book, index}){
       <div>by: {book.author}</div>
       <div>{book.shortDescription}</div>
       <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
-      <div class ="expanded">
+      <div>
       { minimized ? (
-      <button type="button" aria-expanded="true" onClick={() => setMinimized(!minimized)}>Show Less</button>  
-        ) : (
-          <button type="button" aria-expanded="false" onClick={() => setMinimized(!minimized)}>Show More</button>)}
+      <div className ="disclosure-control"
+      role ="button"
+      aria-expanded={!minimized}
+      onClick={()=> setMinimized(!minimized)}>
+      <TriangleDownIcon size = {24} aria-label = "Show Less"/>
+      <span>Show Less</span>
+      </div> 
+        ) : ("")
+          }
       </div>
 
       {minimized ? (
-      <DetailCard book={book} key = {index}/>): ("")
+      <>
+      <DetailCard book={book} key = {index}/>
+      </>)
+      : (
+        <div className="disclosure-control"
+        role ="button"
+        aria-expanded={minimized}
+        onClick={()=> setMinimized(!minimized)}>
+        <TriangleRightIcon size ={24} aria-label ="Show More"/>
+        <span>Show More</span>
+        </div>
+      )
     }
     </div>
     )
@@ -27,7 +45,7 @@ export default function InfoCard({book, index}){
 
 function DetailCard ({book}){
   return (
-    <div>
+    <div className= "expanded">
     <br></br>
       <div>{book.detailedDescription}</div>
       <div>Published {book.publicationDate} by {book.publisher}</div>
