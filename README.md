@@ -8,17 +8,17 @@ The finished product will look like the included wireframe. When the information
 
 The page should display a list of books with a thumbnail display of information for each book, including:
 
-+ title
-+ author
-+ short description
-+ image of the book's cover
+- title
+- author
+- short description
+- image of the book's cover
 
 The additional information shown in the expanded view should include:
 
-+ URL
-+ publisher
-+ publication date
-+ expanded description
+- URL
+- publisher
+- publication date
+- expanded description
 
 Note that you will need to handle cases where not all the data is available. In these cases, make sure your UI design can accommodate missing or problematic data and/or supply placeholder images or text so that your page won't look broken without it.
 
@@ -30,12 +30,13 @@ You will need a list of books to display in your application. A list is containe
 
 ## Rubric
 
-- *Completion*
+- _Completion_
+
   - 1 (Unsatisfactory): does not show all information or does not show/hide information
   - 2 (Satisfactory): meets all requirements under "Directions". Shows all books and shows/hides their extra information
   - 3 (Exemplary): meets all requirements, is nicely styled, uses the `aria-expanded` attribute
 
-- *React Usage*
+- _React Usage_
   - 1 (Unsatisfactory): uses DOM manipulation or HTML directly to show and hide information
   - 2 (Satisfactory): uses JSX, conditional rendering, and state to show and hide information
   - 3 (Exemplary): breaks application into multiple components in a useful way
