@@ -58,14 +58,14 @@ function DetailCard ({book}){
   return (
     <div className= "detail">
     <br></br>
-      <div>{book.detailedDescription}</div>
+      <div className ='expanded'>{book.detailedDescription}</div>
             { book.publicationDate != null && 
       <span>Published {book.publicationDate}</span>
       } { book.publisher != null && 
         <span>by {book.publisher}</span>
         }
     <div id ="url">
-      <a href={book.url}>{book.url}</a>
+      <a href={book.url}>More Information</a>
       </div>
     </div>
   )
