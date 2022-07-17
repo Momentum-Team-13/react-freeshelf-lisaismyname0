@@ -27,7 +27,9 @@ export default function InfoCard({book, index}){
       </div>
     <div>
       <div className = "photo">
-      <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"></img>
+      <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"
+      onError={(e) => e.target.src = "default_book_cover.jpg"
+      }/>
       </div>
     </div>
       <div>
@@ -57,9 +59,12 @@ function DetailCard ({book}){
     <div className= "detail">
     <br></br>
       <div>{book.detailedDescription}</div>
-      <div>Published {book.publicationDate}</div>
-      
-      <div>by {book.publisher}</div>
+            { book.publicationDate != null && 
+      <span>Published {book.publicationDate}</span>
+      } { book.publisher != null && 
+        <span>by {book.publisher}</span>
+        }
+
       <div id ="url">
       <a href={book.url}>{book.url}</a>
       </div>
