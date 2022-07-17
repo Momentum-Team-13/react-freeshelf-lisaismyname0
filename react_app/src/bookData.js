@@ -9,7 +9,7 @@ export default function InfoCard({book, index}){
 
     <div id ="book" key = {book.title}> 
     <span id = "head" className ="title">{book.title}</span>
-    <span id = "head">by: {book.author}</span>
+    <span id = "head">by: <strong>{book.author}</strong></span>
     <br></br>
     <div className="card_top">
       <div className = "text_info">
@@ -20,7 +20,7 @@ export default function InfoCard({book, index}){
       aria-expanded={!minimized}
       onClick={()=> setMinimized(!minimized)}>
       <TriangleDownIcon size = {24} aria-label = "Show Less"/>
-      <span>Show Less</span>
+      <span><strong>Show Less</strong></span>
       </div> 
         ) : ("")
           }
@@ -28,7 +28,7 @@ export default function InfoCard({book, index}){
     <div>
       <div className = "photo">
       <img className ='image' src={book.coverImageUrl} alt= "photograph of book cover"
-      onError={(e) => e.target.src = "default_book_cover.jpg"
+      onError={(e) => e.target.src = "default_book_cover.png"
       }/>
       </div>
     </div>
@@ -46,7 +46,7 @@ export default function InfoCard({book, index}){
         aria-expanded={minimized}
         onClick={()=> setMinimized(!minimized)}>
         <TriangleRightIcon size ={24} aria-label ="Show More"/>
-        <span>Show More</span>
+        <span><strong>Show More</strong></span>
         </div>
       )
     }
@@ -64,8 +64,7 @@ function DetailCard ({book}){
       } { book.publisher != null && 
         <span>by {book.publisher}</span>
         }
-
-      <div id ="url">
+    <div id ="url">
       <a href={book.url}>{book.url}</a>
       </div>
     </div>
