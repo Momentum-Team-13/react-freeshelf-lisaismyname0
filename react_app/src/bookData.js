@@ -65,7 +65,7 @@ function DetailCard ({book}){
         <span>by {book.publisher}</span>
         }
     <div id ="url">
-      <a href={book.url}>More Information</a>
+      <a href={book.url} target="_blank" rel="noopener noreferrer">More Information</a>
       </div>
     </div>
   )

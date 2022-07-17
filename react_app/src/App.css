@@ -23,8 +23,7 @@ color: #003b49;
 
 #book{
   padding: 5px;
-  background-color: #d6d2c4
-  ;
+  background-color: #d6d2c4;
   color: #003b49;
   display: flex;
   flex-direction: column;
@@ -56,6 +55,7 @@ color: #003b49;
 }
 
 img{
+  padding: 2px;
   width: 200px;
   height: auto;
   box-shadow: slategrey  2px 5px;
